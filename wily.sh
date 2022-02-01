@@ -16,13 +16,16 @@ else sudo apt install porechop
 fi
 if sudo apt install minimap2 racon; then
 echo "All dependencies available, proceeding ahead /n."
-else echo "Some programs could not be fixed/unavailable, Wily exits with error /n Good bye!"
+else echo "Some programs could not be fixed/unavailable, Wily may proceed with errors!"
 fi
-echo "~~~This program recursively enters every folder in the current directory and looks for fastq files~~~/n"
+sudo apt install figlet toilet ||
+sudo apt install boxes ||
+figlet -c -t WILY FOR NANOPORE ||
+echo "~~~This program recursively enters every folder in the current directory and looks for fastq files~~~" | boxes -d boy
 path=$PWD
 for d in $path/*; do
 cd $d &&
-echo "~~~In every directory,an assembly folder will be created where the flye assembly outputs can be found~~~/n"
+echo "~~~In every directory,an assembly folder will be created where the flye assembly outputs can be found~~~"
 mkdir assembly
 path2=$PWD
 echo "~~~Concatenates all fastq files in the barcode folder~~~~/n"

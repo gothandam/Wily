@@ -1,4 +1,5 @@
 #!/bin/bash
+(
 tput smso; echo "$ ~~~Starting WILY afresh $" 
 tput rmso;
 tput smso; echo "$ Looking for dependent programs of this pipeline one by one!$" 
@@ -76,5 +77,8 @@ tar -zcf assembly.tar.gz assembly
 tar -zcf circularised.tar.gz circularised
 tar -cf rawfiles.tar porechoped.fastq filtout.fastq merged.fastq
 tar -cf polishedassembly.tar polish.assembly.fasta
+echo "Find wily.log for more information"
+/bin/sleep -5
 clear
 done
+) > wily.log

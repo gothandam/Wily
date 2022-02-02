@@ -3,7 +3,8 @@ tput smso; echo "$ ~~~Starting WILY afresh $"
 tput rmso;
 tput smso; echo "$ Looking for dependent programs of this pipeline one by one!$" 
 tput rmso;
-tput smso; echo " $ Please input password as and when the terminal prompts to$" 
+tput smso; echo " $ Please input password as and when the terminal prompts to$"
+/bin/sleep 2
 tput rmso;
 if flye --help; then
 tput smso; echo "$ FLye available and it is all good!$" 
